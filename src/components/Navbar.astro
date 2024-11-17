@@ -3,14 +3,78 @@
     <a class="left_section_logo" href="">The Atelier Gallery</a>
   </div>
   <div class="navbar_right_section">
-    <a class="right_section_anchorlink" href="">Home</a>
-    <a class="right_section_anchorlink" href="">Exhibitions</a>
-    <a class="right_section_anchorlink" href="">Designers</a>
-    <a class="right_section_anchorlink" href="">Gallery</a>
-    <a class="right_section_anchorlink" href="">About us</a>
-    <a class="right_section_anchorlink" href="">Contact</a>
+    <a class="right_section_anchorlink first_link" href="">Home</a>
+    <a class="right_section_anchorlink second_link" href="">Exhibitions</a>
+    <a class="right_section_anchorlink third_link" href="">Designers</a>
+    <a class="right_section_anchorlink fourth_link" href="">Gallery</a>
+    <a class="right_section_anchorlink fifth_link" href="">About us</a>
+    <a class="right_section_anchorlink sixth_link" href="">Contact</a>
   </div>
 </div>
+
+<script>
+   import anime from "animejs";
+
+document.addEventListener("DOMContentLoaded", () => {
+  anime({
+    targets: ".navbar_left_section",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 300,
+  });
+  anime({
+    targets: ".navbar_right_section",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 300,
+  });
+  anime({
+    targets: ".first_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 200,
+  });
+  anime({
+    targets: ".second_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 300,
+  });
+  anime({
+    targets: ".third_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 400,
+  });
+  anime({
+    targets: ".fourth_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 500,
+  });
+  anime({
+    targets: ".fifth_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 600,
+  });
+  anime({
+    targets: ".sixth_link",
+    opacity: [0, 1],
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 700,
+  });
+
+});
+</script>
 
 <style>
 .navbar{

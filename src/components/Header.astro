@@ -8,9 +8,9 @@ import photo3 from "../../public/photo_three.webp";
 
 <div class="header">
   <div class="image_displayer">
-    <Image src={photo1} alt="two models in black dresses" class="images" />
-    <Image src={photo2} alt="runway show" class="images" />
-    <Image src={photo3} alt="two modelss wearing dresses" class="images" />
+    <Image src={photo1} alt="two models in black dresses" class="images image_one" />
+    <Image src={photo2} alt="runway show" class="images image_two" />
+    <Image src={photo3} alt="two modelss wearing dresses" class="images image_three" />
   </div>
   <div class="header_content">
     <h1 class="header_title">
@@ -30,22 +30,37 @@ import photo3 from "../../public/photo_three.webp";
 
   document.addEventListener("DOMContentLoaded", () => {
     anime({
-      targets: ".images",
+      targets: ".image_one",
       opacity: [0, 1],
       duration: 10000,
       easing: "easeOutExpo",
+      delay: 750,
+    });
+    anime({
+      targets: ".image_two",
+      opacity: [0, 1],
+      duration: 3000,
+      easing: "easeOutExpo",
+      delay: 2250,
+    });
+    anime({
+      targets: ".image_three",
+      opacity: [0, 1],
+      duration: 8000,
+      easing: "easeOutExpo",
+      delay: 1500,
     });
     anime({
       targets: ".header_title",
       opacity: [0, 1],
-      duration: 4000,
+      duration: 10000,
       easing: "easeOutExpo",
       delay: 1000,
     });
     anime({
       targets: ".header_text",
       opacity: [0, 1],
-      duration: 4000,
+      duration: 8000,
       easing: "easeOutExpo",
       delay: 2000,
     });
@@ -61,7 +76,7 @@ import photo3 from "../../public/photo_three.webp";
 
 <style>
   .header {
-    margin: 2rem 1rem;
+    margin: 4rem 1rem;
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -75,8 +90,13 @@ import photo3 from "../../public/photo_three.webp";
   }
 
   .images {
-    width: 300px;
+    width: 280px;
     height: 100%;
+  }
+
+  .image_two{
+    scale: 1.1;
+    z-index: 100;
   }
 
   .header_content {
@@ -95,10 +115,10 @@ import photo3 from "../../public/photo_three.webp";
 
   .header_text {
     font-family: "Karla", sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
-    color: #707070;
+    color: #7c7c7c;
     margin: 1rem 0;
   }
 
@@ -110,6 +130,7 @@ import photo3 from "../../public/photo_three.webp";
     color: #010101;
     width: fit-content;
     margin: 1rem 0;
+    text-transform: uppercase;
   }
 
   a:hover {
