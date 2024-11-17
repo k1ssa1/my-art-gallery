@@ -38,10 +38,17 @@ import photo3 from "../../public/photo_three.webp";
     });
     anime({
       targets: ".image_two",
+      scale: [
+      {value: 1, duration: 0},
+      {value: 1.025, duration: 100},
+      {value: 1.05, duration: 100},
+      {value: 1.075, duration: 100},
+      {value: 1.1, duration: 100},
+      ],
       opacity: [0, 1],
       duration: 3000,
       easing: "easeOutExpo",
-      delay: 2250,
+      delay: 2000,
     });
     anime({
       targets: ".image_three",
@@ -95,7 +102,6 @@ import photo3 from "../../public/photo_three.webp";
   }
 
   .image_two{
-    scale: 1.1;
     z-index: 100;
   }
 
