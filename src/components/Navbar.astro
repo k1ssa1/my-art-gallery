@@ -1,10 +1,12 @@
-<div class="navbar">
+<div class="navbar" id="navBar">
   <div class="navbar_left_section">
     <a class="left_section_logo" href="">The Atelier Gallery</a>
   </div>
   <div class="navbar_right_section">
-    <a class="right_section_anchorlink first_link" href="">Home</a>
-    <a class="right_section_anchorlink second_link" href="">Exhibitions</a>
+    <a class="right_section_anchorlink first_link" id="home_link" href=""
+      >Home</a
+    >
+    <a class="right_section_anchorlink second_link" id="exhibition_link" href="">Exhibitions</a>
     <a class="right_section_anchorlink third_link" href="">Designers</a>
     <a class="right_section_anchorlink fourth_link" href="">Gallery</a>
     <a class="right_section_anchorlink fifth_link" href="">About us</a>
@@ -13,108 +15,133 @@
 </div>
 
 <script>
-   import anime from "animejs";
+  import anime from "animejs";
 
-document.addEventListener("DOMContentLoaded", () => {
-  anime({
-    targets: ".navbar_left_section",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 300,
-  });
-  anime({
-    targets: ".navbar_right_section",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 300,
-  });
-  anime({
-    targets: ".first_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 200,
-  });
-  anime({
-    targets: ".second_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 300,
-  });
-  anime({
-    targets: ".third_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 400,
-  });
-  anime({
-    targets: ".fourth_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 500,
-  });
-  anime({
-    targets: ".fifth_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 600,
-  });
-  anime({
-    targets: ".sixth_link",
-    opacity: [0, 1],
-    duration: 1000,
-    easing: "easeOutExpo",
-    delay: 700,
-  });
+  document.addEventListener("DOMContentLoaded", () => {
 
-});
+    document.addEventListener("scroll", () => {
+      const navBar =  document.getElementById("navBar");
+      if(window.scrollY > 0){
+        navBar.classList.add("navbar_highlight")
+      }else{
+        navBar.classList.remove("navbar_highlight")
+      }
+    })
+
+    
+
+    anime({
+      targets: ".navbar_left_section",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 300,
+    });
+    anime({
+      targets: ".navbar_right_section",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 300,
+    });
+    anime({
+      targets: ".first_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 200,
+    });
+    anime({
+      targets: ".second_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 300,
+    });
+    anime({
+      targets: ".third_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 400,
+    });
+    anime({
+      targets: ".fourth_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 500,
+    });
+    anime({
+      targets: ".fifth_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 600,
+    });
+    anime({
+      targets: ".sixth_link",
+      opacity: [0, 1],
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 700,
+    });
+  });
 </script>
 
 <style>
-.navbar{
+  .navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding: 1rem;
     font-family: "Karla", Helvetica, sans-serif;
-    align-items: flex-end;
-}
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
 
-.left_section_logo{
+  .navbar_highlight{
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .left_section_logo {
     font-family: "Karla";
     font-weight: 800;
     font-size: 1rem;
     letter-spacing: 1px;
     word-spacing: 1px;
     text-transform: uppercase;
-}
+  }
 
-.navbar_right_section{
+  .navbar_right_section {
     display: flex;
     flex-direction: row;
-    gap: 10px
-}
+    gap: 10px;
+  }
 
-.right_section_anchorlink{
+  .right_section_anchorlink {
     font-weight: 200;
     font-size: 1rem;
     text-transform: uppercase;
-}
+  }
 
-.right_section_anchorlink:hover{
+  .right_section_anchorlink:hover {
     font-weight: 600;
     transition: 0.2s;
-}
+  }
 
-a{
+  a {
     text-decoration: none;
     color: #010101;
-}
+  }
 
+  .highlight_section {
+    font-weight: 600;
+    transition: 0.2s;
+  }
 </style>
