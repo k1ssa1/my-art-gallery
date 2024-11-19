@@ -1,10 +1,14 @@
 ---
 import { Image } from "astro:assets";
 
+import green_shiny from "../../public/green_shiny.webp"
 import blackwhite from "../../public/black_white_model.webp"
+import gothicdresstwo from "../../public/goth_dress_two.webp"
 import indian_runway from "../../public/indian_runway.webp"
 import gothicdress from "../../public/goth_dress.webp"
 import summer_runway from "../../public/summer_runway.webp"
+import futuristic from "../../public/futuristic.webp"
+
 ---
 
 <div class="main_container">
@@ -15,12 +19,54 @@ import summer_runway from "../../public/summer_runway.webp"
             <li class="container_description_item">Our exhibitions bring to life the exquisite duality of fashion: bold yet refined, daring yet timeless. From the opulence of Indian-inspired designs to the seductive contrast of gothic palettes, every collection is a testament to the power of imagination and creativity. This is a space where boundaries are blurred, and individuality takes center stage, creating moments that are as captivating as they are unforgettable.</li>
             <li class="container_description_item">This is more than a showcase; it is an invitation to indulge in the beauty of form, fabric, and feeling. Allow yourself to be swept away by the monochrome mystique, the carefree charm of summer glam, or the rich textures of retro bohemian chic. Each exhibit is a sensory experience, a celebration of fashion's ability to captivate and transform. Welcome to a space where every glance lingers, and every moment is a masterpiece.</li>
         </ul>
-        <Image src={summer_runway} alt="exhibition_section_image" class="main_container_image"/>
+        <Image src={green_shiny} alt="exhibition_section_image" class="main_container_image"/>
     </div>
-    <div>
-        <div>
-
+    <div class="exhibitions_card_container">
+        <div class="exhibitions_card">
+            <div class="exhibitions_card_img_container">
+                <Image src={futuristic} class="exhibitions_card_img" alt="Bohemian Reverie "/>
+            </div>
+            <div class="exhibitions_card_content_container">
+                <h3 class="card_content_title">Bohemian Reverie</h3>
+                <h4 class="card_content_subtitle">A Dance of Freedom and Nostalgia</h4>
+                <p class="card_content_date">Dates: December 14–24, 2024</p>
+                <p class="card_content_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
+            </div>
         </div>
+        <div class="exhibitions_card">
+            <div class="exhibitions_card_img_container">
+                <Image src={summer_runway} class="exhibitions_card_img" alt="Summer Runway Splendor"/>
+            </div>
+            <div class="exhibitions_card_content_container">
+                <h3 class="card_content_title">Summer Runway Splendor/h3>
+                <h4 class="card_content_subtitle">Breezy Elegance Under the Sun</h4>
+                <p class="card_content_date">Dates: June 15–25, 2025</p>
+                <p class="card_content_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
+            </div>
+        </div>
+       <div class="exhibitions_card_blackwhite">
+        <div class="exhibitions_card_blackwhite_content_container">
+            <h3 class="card_content_title">Sensual in Black and White</h3>
+            <h4 class="card_content_subtitle">Monochrome Magic</h4>
+            <p class="card_content_date">Dates: January 02–03, 2025</p>
+            <p class="card_content_description">Black and white transcend time in this celebration of minimalistic sophistication. This exhibition channels the raw sensuality of fashion photography, where every pose and angle captures a moment of pure allure. Chic, timeless, and undeniably captivating—monochrome has never been more provocative.</p>
+        </div>
+        <div class="exhibitions_card_blackwhite_img_container">
+            <Image src={blackwhite} class="exhibitions_card_blackwhite_img_one" alt="Bohemian Reverie "/>
+        </div>
+       </div>
+       <div class="exhibitions_gothic_card">
+        <div class="exhibitions_gothic_card_img_container">
+            <Image src={gothicdress} class="exhibitions_gothic_card_img" alt="Bohemian Reverie "/>
+            <Image src={gothicdresstwo} class="exhibitions_gothic_card_img" alt="Bohemian Reverie "/>
+        </div>
+        <div class="exhibitions_gothic_card_content_container">
+            <h3 class="card_content_title">Gothic Grace</h3>
+            <h4 class="card_content_subtitle">Romance, Reinvented</h4>
+            <p class="card_content_date">Dates: April 15–20, 2025</p>
+            <p class="card_content_description">This exhibition is a bold ode to gothic glamour. Draped in dramatic shades of crimson and ivory, the pieces evoke a theatrical elegance that is both daring and poetic. With striking contrasts and powerful silhouettes, it’s a journey into the art of fashion’s most enigmatic narrative.</p>
+        </div>
+    </div>
     </div>
 </div>
 
@@ -32,6 +78,7 @@ import summer_runway from "../../public/summer_runway.webp"
     margin: 6rem 0 0;
     background-color: #fff;
     color: #010101;
+    padding: 4rem 0;
 }
 
 .main_container_header{
@@ -67,9 +114,112 @@ import summer_runway from "../../public/summer_runway.webp"
 }
 
 .main_container_image{
-    width: 300px;
+    width: 350px;
     height: auto;
     margin: 4rem auto;
+}
+
+.exhibitions_card_container{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 2rem;
+    margin: 4rem 0 0;
+}
+
+.exhibitions_card{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.exhibitions_card_img_container{
+    width: fit-content;
+}
+
+.exhibitions_card_img{
+    width: 400px;
+    height: auto;
+}
+
+.exhibitions_card_content_container{
+    display: flex;
+    flex-direction: column;
+}
+
+.card_content_title{
+    font-family: "Karla", sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin: 0 0 0.5rem;
+    color: 4;
+    font-weight: 400;
+}
+
+.card_content_subtitle{
+    font-family: "Karla", sans-serif;
+    text-transform: uppercase;
+    font-size: 6rem;
+    margin: 0;
+    color: 4;
+    line-height: 1;
+    font-weight: 800;
+}
+
+.card_content_date{
+    font-family: "Karla", sans-serif;
+    font-size: 0.9rem;
+}
+
+.card_content_description{
+    font-family: "Karla", sans-serif;
+    font-size: 0.85rem;
+    margin: 2rem 0;
+    line-height: 1.4;
+    color: #7c7c7c;
+    width: 80%;
+}
+
+.exhibitions_card_blackwhite{
+    margin: 4rem 0 6rem;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.exhibitions_card_blackwhite_content_container{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.exhibitions_card_blackwhite_img_container{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.exhibitions_card_blackwhite_img_one{
+    width: 500px;
+    height: auto;
+}
+
+.exhibitions_gothic_card{
+ display: grid;
+ grid-template-columns: 50% 50%;
+ margin: 2rem 0 6rem;
+}
+
+.exhibitions_gothic_card_img_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.exhibitions_gothic_card_img{
+    width: 300px;
+    height: auto;
+}
+
+.exhibitions_gothic_card_content_container{
+    display: grid;
+    grid-template-columns: auto;
 }
 
 </style>
