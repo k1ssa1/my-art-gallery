@@ -9,66 +9,496 @@ import gothicdress from "../../public/goth_dress.webp"
 import summer_runway from "../../public/summer_runway.webp"
 import futuristic from "../../public/futuristic.webp"
 
+
+
 ---
 
 <div class="main_container">
     <div class="main_container_header">
-        <h2 class="container_header_title">Discover our Exhibitions</h2>
+        <h2 class="container_header_title" id="exhibition_title">Discover our Exhibitions</h2>
         <ul class="container_description_list">
-            <li class="container_description_item">Step into a world where elegance meets intrigue, where every thread whispers a story, and every silhouette commands attention. This exhibition section is a curated symphony of artistry and allure, inviting you to explore the sensuality and sophistication that define fashion at its most provocative. Here, beauty is not just seen—it is felt, experienced, and remembered.</li>
-            <li class="container_description_item">Our exhibitions bring to life the exquisite duality of fashion: bold yet refined, daring yet timeless. From the opulence of Indian-inspired designs to the seductive contrast of gothic palettes, every collection is a testament to the power of imagination and creativity. This is a space where boundaries are blurred, and individuality takes center stage, creating moments that are as captivating as they are unforgettable.</li>
-            <li class="container_description_item">This is more than a showcase; it is an invitation to indulge in the beauty of form, fabric, and feeling. Allow yourself to be swept away by the monochrome mystique, the carefree charm of summer glam, or the rich textures of retro bohemian chic. Each exhibit is a sensory experience, a celebration of fashion's ability to captivate and transform. Welcome to a space where every glance lingers, and every moment is a masterpiece.</li>
+            <li class="container_description_item" id="exhibition_first_description">Step into a world where elegance meets intrigue, where every thread whispers a story, and every silhouette commands attention. This exhibition section is a curated symphony of artistry and allure, inviting you to explore the sensuality and sophistication that define fashion at its most provocative. Here, beauty is not just seen—it is felt, experienced, and remembered.</li>
+            <li class="container_description_item" id="exhibition_second_description">Our exhibitions bring to life the exquisite duality of fashion: bold yet refined, daring yet timeless. From the opulence of Indian-inspired designs to the seductive contrast of gothic palettes, every collection is a testament to the power of imagination and creativity. This is a space where boundaries are blurred, and individuality takes center stage, creating moments that are as captivating as they are unforgettable.</li>
+            <li class="container_description_item" id="exhibition_third_description">This is more than a showcase; it is an invitation to indulge in the beauty of form, fabric, and feeling. Allow yourself to be swept away by the monochrome mystique, the carefree charm of summer glam, or the rich textures of retro bohemian chic. Each exhibit is a sensory experience, a celebration of fashion's ability to captivate and transform. Welcome to a space where every glance lingers, and every moment is a masterpiece.</li>
         </ul>
-        <Image src={green_shiny} alt="exhibition_section_image" class="main_container_image"/>
+        <Image src={green_shiny} alt="exhibition_section_image" class="main_container_image" id="container_image_desc"/>
     </div>
     <div class="exhibitions_card_container">
         <div class="exhibitions_card">
             <div class="exhibitions_card_img_container">
-                <Image src={futuristic} class="exhibitions_card_img" alt="Bohemian Reverie "/>
+                <Image src={futuristic} class="exhibitions_card_img" alt="Bohemian Reverie" id="bohemian_reverie_image"/>
             </div>
             <div class="exhibitions_card_content_container">
-                <h3 class="card_content_title">Bohemian Reverie</h3>
-                <h4 class="card_content_subtitle">A Dance of Freedom and Nostalgia</h4>
-                <p class="card_content_date">Dates: December 14–24, 2024</p>
-                <p class="card_content_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
+                <h3 class="card_content_title" id="bohemian_reverie_title">Bohemian Reverie</h3>
+                <h4 class="card_content_subtitle" id="bohemian_reverie_subtitle">A Dance of Freedom and Nostalgia</h4>
+                <p class="card_content_date" id="bohemian_reverie_date">Dates: December 14–24, 2024</p>
+                <p class="card_content_description" id="bohemian_reverie_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
             </div>
         </div>
         <div class="exhibitions_card">
             <div class="exhibitions_card_img_container">
-                <Image src={summer_runway} class="exhibitions_card_img" alt="Summer Runway Splendor"/>
+                <Image src={summer_runway} class="exhibitions_card_img" alt="Summer Runway Splendor" id="summer_runway_image"/>
             </div>
             <div class="exhibitions_card_content_container">
-                <h3 class="card_content_title">Summer Runway Splendor/h3>
-                <h4 class="card_content_subtitle">Breezy Elegance Under the Sun</h4>
-                <p class="card_content_date">Dates: June 15–25, 2025</p>
-                <p class="card_content_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
+                <h3 class="card_content_title" id="summer_runway_title">Summer Runway Splendor</h3>
+                <h4 class="card_content_subtitle" id="summer_runway_subtitle">Breezy Elegance Under the Sun</h4>
+                <p class="card_content_date" id="summer_runway_date">Dates: June 15–25, 2025</p>
+                <p class="card_content_description" id="summer_runway_description">Step into a world where bohemian freedom meets retro glamour. This exhibition celebrates bold individuality, playful creativity, and the timeless appeal of vintage aesthetics. It's a love letter to those who see fashion as a canvas for self-expression.</p>
             </div>
         </div>
        <div class="exhibitions_card_blackwhite">
-        <div class="exhibitions_card_blackwhite_content_container">
-            <h3 class="card_content_title">Sensual in Black and White</h3>
-            <h4 class="card_content_subtitle">Monochrome Magic</h4>
-            <p class="card_content_date">Dates: January 02–03, 2025</p>
-            <p class="card_content_description">Black and white transcend time in this celebration of minimalistic sophistication. This exhibition channels the raw sensuality of fashion photography, where every pose and angle captures a moment of pure allure. Chic, timeless, and undeniably captivating—monochrome has never been more provocative.</p>
-        </div>
         <div class="exhibitions_card_blackwhite_img_container">
-            <Image src={blackwhite} class="exhibitions_card_blackwhite_img_one" alt="Bohemian Reverie "/>
+            <Image src={blackwhite} class="exhibitions_card_blackwhite_img_one" alt="Monochrome Magic" id="black_white_image"/>
+        </div>
+        <div class="exhibitions_card_blackwhite_content_container">
+            <h3 class="card_content_title" id="black_white_title">Sensual in Black and White</h3>
+            <h4 class="card_content_subtitle" id="black_white_subtitle">Monochrome Magic</h4>
+            <p class="card_content_date" id="black_white_date">Dates: September 10–14, 2025</p>
+            <p class="card_content_description" id="black_white_description">Black and white transcend time in this celebration of minimalistic sophistication. This exhibition channels the raw sensuality of fashion photography, where every pose and angle captures a moment of pure allure. Chic, timeless, and undeniably captivating—monochrome has never been more provocative.</p>
         </div>
        </div>
        <div class="exhibitions_gothic_card">
         <div class="exhibitions_gothic_card_img_container">
-            <Image src={gothicdress} class="exhibitions_gothic_card_img" alt="Bohemian Reverie "/>
-            <Image src={gothicdresstwo} class="exhibitions_gothic_card_img" alt="Bohemian Reverie "/>
+            <Image src={gothicdress} class="exhibitions_gothic_card_img" alt="Gothic Grace 1" id="gothic_image_one"/>
+            <Image src={gothicdresstwo} class="exhibitions_gothic_card_img" alt="Gothic Grace 2" id="gothic_image_two"/>
         </div>
         <div class="exhibitions_gothic_card_content_container">
-            <h3 class="card_content_title">Gothic Grace</h3>
-            <h4 class="card_content_subtitle">Romance, Reinvented</h4>
-            <p class="card_content_date">Dates: April 15–20, 2025</p>
-            <p class="card_content_description">This exhibition is a bold ode to gothic glamour. Draped in dramatic shades of crimson and ivory, the pieces evoke a theatrical elegance that is both daring and poetic. With striking contrasts and powerful silhouettes, it’s a journey into the art of fashion’s most enigmatic narrative.</p>
+            <h3 class="card_content_title" id="gothic_title">Gothic Grace</h3>
+            <h4 class="card_content_subtitle" id="gothic_subtitle">Romance, Reinvented</h4>
+            <p class="card_content_date" id="gothic_date">Dates: December 28–30, 2025</p>
+            <p class="card_content_description" id="gothic_description">This exhibition is a bold ode to gothic glamour. Draped in dramatic shades of crimson and ivory, the pieces evoke a theatrical elegance that is both daring and poetic. With striking contrasts and powerful silhouettes, it’s a journey into the art of fashion’s most enigmatic narrative.</p>
         </div>
     </div>
     </div>
 </div>
+
+<script>
+
+    import anime from "animejs";
+
+    let hasAnimatedTitle = false;
+    let hasAnimatedFirstDesc = false;
+    let hasAnimatedSecondDesc = false;
+    let hasAnimatedThirdDesc = false;
+    let hasAnimatedDescPicture = false;
+
+    let hasAnimatedBohemainReverieImage = false;
+    let hasAnimatedBohemainReverieTitle = false;
+    let hasAnimatedBohemainReverieSubtitle = false;
+    let hasAnimatedBohemainReverieDate = false;
+    let hasAnimatedBohemainReverieDesc = false;
+
+    let hasAnimatedSummerRunwayImage = false;
+    let hasAnimatedSummerRunwayTitle = false;
+    let hasAnimatedSummerRunwaySubtitle = false;
+    let hasAnimatedSummerRunwayDate = false;
+    let hasAnimatedSummerRunwayDesc = false;
+
+    let hasAnimatedBlackWhiteImage = false;
+    let hasAnimatedBlackWhiteTitle = false;
+    let hasAnimatedBlackWhiteSubtitle = false;
+    let hasAnimatedBlackWhiteDate = false;
+    let hasAnimatedBlackWhiteDesc = false;
+
+    let hasAnimatedGothicImageOne = false;
+    let hasAnimatedGothicImageTwo = false;
+    let hasAnimatedGothicTitle = false;
+    let hasAnimatedGothicSubtitle = false;
+    let hasAnimatedGothicDate = false;
+    let hasAnimatedGothicDesc = false;
+
+    document.addEventListener('scroll', () => {
+        const title = document.getElementById("exhibition_title")
+
+        const firstDescription = document.getElementById("exhibition_first_description")
+        const secondDescription = document.getElementById("exhibition_second_description")
+        const thirdDescription = document.getElementById("exhibition_third_description")
+
+        const imageDescription = document.getElementById("container_image_desc")
+
+        const bohemianReverieImage = document.getElementById("bohemian_reverie_image")
+        const bohemianReverieTitle = document.getElementById("bohemian_reverie_title")
+        const bohemianReverieSubtitle = document.getElementById("bohemian_reverie_subtitle")
+        const bohemianReverieDate = document.getElementById("bohemian_reverie_date")
+        const bohemianReverieDesc = document.getElementById("bohemian_reverie_description")
+
+        const summerRunwayImage = document.getElementById("summer_runway_image")
+        const summerRunwayTitle = document.getElementById("summer_runway_title")
+        const summerRunwaySubtitle = document.getElementById("summer_runway_subtitle")
+        const summerRunwayDate = document.getElementById("summer_runway_date")
+        const summerRunwayDesc = document.getElementById("summer_runway_description")
+
+        const blackWhiteImage = document.getElementById("black_white_image")
+        const blackWhiteTitle = document.getElementById("black_white_title")
+        const blackWhiteSubtitle = document.getElementById("black_white_subtitle")
+        const blackWhiteDate = document.getElementById("black_white_date")
+        const blackWhiteDesc = document.getElementById("black_white_description")
+
+        const gothicImageOne = document.getElementById("gothic_image_one")
+        const gothicImageTwo = document.getElementById("gothic_image_two")
+        const gothicTitle = document.getElementById("gothic_title")
+        const gothicSubtitle = document.getElementById("gothic_subtitle")
+        const gothicDate = document.getElementById("gothic_date")
+        const gothicDesc = document.getElementById("gothic_description")
+
+        if (!title) return;
+        if(!firstDescription) return;
+        if(!secondDescription) return;
+        if(!thirdDescription) return;
+        if (!imageDescription) return;
+
+        if(!bohemianReverieImage) return;
+        if(!bohemianReverieTitle) return;
+        if(!bohemianReverieSubtitle) return;
+        if(!bohemianReverieDate) return;
+        if(!bohemianReverieDesc) return;
+
+        if(!summerRunwayImage) return;
+        if(!summerRunwayTitle) return;
+        if(!summerRunwaySubtitle) return;
+        if(!summerRunwayDate) return;
+        if(!summerRunwayDesc) return;
+
+        if(!blackWhiteImage) return;
+        if(!blackWhiteTitle) return;
+        if(!blackWhiteSubtitle) return;
+        if(!blackWhiteDate) return;
+        if(!blackWhiteDesc) return;
+
+        if(!gothicImageOne) return;
+        if(!gothicImageTwo) return;
+        if(!gothicTitle) return;
+        if(!gothicSubtitle) return;
+        if(!gothicDate) return;
+        if(!gothicDesc) return;
+
+        const titlePosition  = title.getBoundingClientRect()
+
+        const firstDescriptionPos = firstDescription.getBoundingClientRect()
+        const secondDescriptionPos = secondDescription.getBoundingClientRect()
+        const thirdDescriptionPos = thirdDescription.getBoundingClientRect()
+
+        const imageDescriptionPos = imageDescription.getBoundingClientRect()
+
+        const bohemianReverieImagePos = bohemianReverieImage.getBoundingClientRect()
+        const bohemianReverieTitlePos = bohemianReverieTitle.getBoundingClientRect()
+        const bohemianReverieSubtitlePos = bohemianReverieSubtitle.getBoundingClientRect()
+        const bohemianReverieDatePos = bohemianReverieDate.getBoundingClientRect()
+        const bohemianReverieDescPos = bohemianReverieDesc.getBoundingClientRect()
+
+        const summerRunwayImagePos = summerRunwayImage.getBoundingClientRect()
+        const summerRunwayTitlePos = summerRunwayTitle.getBoundingClientRect()
+        const summerRunwaySubtitlePos = summerRunwaySubtitle.getBoundingClientRect()
+        const summerRunwayDatePos = summerRunwayDate.getBoundingClientRect()
+        const summerRunwayDescPos = summerRunwayDesc.getBoundingClientRect()
+
+        const blackWhiteImagePos = blackWhiteImage.getBoundingClientRect()
+        const blackWhiteTitlePos = blackWhiteTitle.getBoundingClientRect()
+        const blackWhiteSubtitlePos = blackWhiteSubtitle.getBoundingClientRect()
+        const blackWhiteDatePos = blackWhiteDate.getBoundingClientRect()
+        const blackWhiteDescPos = blackWhiteDesc.getBoundingClientRect()
+
+        const gothicImagOnePos = gothicImageOne.getBoundingClientRect()
+        const gothicImagTwoPos = gothicImageTwo.getBoundingClientRect()
+        const gothicTitlePos = gothicTitle.getBoundingClientRect()
+        const gothicSubtitlePos = gothicSubtitle.getBoundingClientRect()
+        const gothicDatePos = gothicDate.getBoundingClientRect()
+        const gothicDescPos = gothicDesc.getBoundingClientRect()
+
+
+        if(titlePosition.top < window.innerHeight && titlePosition.bottom > 0 && !hasAnimatedTitle){
+            hasAnimatedTitle = true;
+            anime({
+                targets: "#exhibition_title",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 600
+            })
+        }
+
+        if(firstDescriptionPos.top < window.innerHeight && firstDescriptionPos.bottom > 0 && !hasAnimatedFirstDesc){
+            hasAnimatedFirstDesc = true;
+            anime({
+                targets: "#exhibition_first_description",
+                opacity: [0, 1],
+                duration: 4000,
+                easing: "easeOutExpo",
+                delay: 800
+            })
+        }
+
+        if(secondDescriptionPos.top < window.innerHeight && secondDescriptionPos.bottom > 0 && !hasAnimatedSecondDesc){
+            hasAnimatedSecondDesc = true;
+            anime({
+                targets: "#exhibition_second_description",
+                opacity: [0, 1],
+                duration: 4000,
+                easing: "easeOutExpo",
+                delay: 1200
+            })
+        }
+
+        if(thirdDescriptionPos.top < window.innerHeight && thirdDescriptionPos.bottom > 0 && !hasAnimatedThirdDesc){
+            hasAnimatedThirdDesc = true;
+            anime({
+                targets: "#exhibition_third_description",
+                opacity: [0, 1],
+                duration: 4000,
+                easing: "easeOutExpo",
+                delay: 1600
+            })
+        }
+
+        if(imageDescriptionPos.top < window.innerHeight && imageDescriptionPos.bottom > 0 && !hasAnimatedDescPicture){
+            hasAnimatedDescPicture = true;
+            anime({
+                targets: "#container_image_desc",
+                opacity: [0, 1],
+                duration: 4000,
+                easing: "easeOutExpo",
+                delay: 2000
+            })
+        }
+
+        if(bohemianReverieImagePos.top < window.innerHeight && bohemianReverieImagePos.bottom > 0 && !hasAnimatedBohemainReverieImage){
+            hasAnimatedBohemainReverieImage = true;
+            anime({
+                targets: "#bohemian_reverie_image",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+                rotate: "360deg"
+            })
+        }
+
+        if(bohemianReverieTitlePos.top < window.innerHeight && bohemianReverieTitlePos.bottom > 0 && !hasAnimatedBohemainReverieTitle){
+            hasAnimatedBohemainReverieTitle = true;
+            anime({
+                targets: "#bohemian_reverie_title",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+            })
+        }
+
+        if(bohemianReverieSubtitlePos.top < window.innerHeight && bohemianReverieSubtitlePos.bottom > 0 && !hasAnimatedBohemainReverieSubtitle){
+            hasAnimatedBohemainReverieSubtitle = true;
+            anime({
+                targets: "#bohemian_reverie_subtitle",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200
+            })
+        }
+
+        if(bohemianReverieDatePos.top < window.innerHeight && bohemianReverieDatePos.bottom > 0 && !hasAnimatedBohemainReverieDate){
+            hasAnimatedBohemainReverieDate = true;
+            anime({
+                targets: "#bohemian_reverie_date",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1400,
+            })
+        }
+
+        if(bohemianReverieDescPos.top < window.innerHeight && bohemianReverieDescPos.bottom > 0 && !hasAnimatedBohemainReverieDesc){
+            hasAnimatedBohemainReverieDesc = true;
+            anime({
+                targets: "#bohemian_reverie_description",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1600,
+            })
+        }
+
+        if(summerRunwayImagePos.top < window.innerHeight && summerRunwayImagePos.bottom > 0 && !hasAnimatedSummerRunwayImage){
+            hasAnimatedSummerRunwayImage = true;
+            anime({
+                targets: "#summer_runway_image",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+                rotate: "360deg"
+            })
+        }
+
+        if(summerRunwayTitlePos.top < window.innerHeight && summerRunwayTitlePos.bottom > 0 && !hasAnimatedSummerRunwayTitle){
+            hasAnimatedSummerRunwayTitle = true;
+            anime({
+                targets: "#summer_runway_title",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+            })
+        }
+
+        if(summerRunwaySubtitlePos.top < window.innerHeight && summerRunwaySubtitlePos.bottom > 0 && !hasAnimatedSummerRunwaySubtitle){
+            hasAnimatedSummerRunwaySubtitle = true;
+            anime({
+                targets: "#summer_runway_subtitle",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200,
+            })
+        }
+
+        if(summerRunwayDatePos.top < window.innerHeight && summerRunwayDatePos.bottom > 0 && !hasAnimatedSummerRunwayDate){
+            hasAnimatedSummerRunwayDate = true;
+            anime({
+                targets: "#summer_runway_date",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1400,
+            })
+        }
+
+        if(summerRunwayDescPos.top < window.innerHeight && summerRunwayDescPos.bottom > 0 && !hasAnimatedSummerRunwayDesc){
+            hasAnimatedSummerRunwayDesc = true;
+            anime({
+                targets: "#summer_runway_description",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1600,
+            })
+        }
+
+        if(blackWhiteImagePos.top < window.innerHeight && blackWhiteImagePos.bottom > 0 && !hasAnimatedBlackWhiteImage){
+            hasAnimatedBlackWhiteImage = true;
+            anime({
+                targets: "#black_white_image",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+                rotate: "360deg"
+            })
+        }
+
+        if(blackWhiteTitlePos.top < window.innerHeight && blackWhiteTitlePos.bottom > 0 && !hasAnimatedBlackWhiteTitle){
+            hasAnimatedBlackWhiteTitle = true;
+            anime({
+                targets: "#black_white_title",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+            })
+        }
+
+        if(blackWhiteSubtitlePos.top < window.innerHeight && blackWhiteSubtitlePos.bottom > 0 && !hasAnimatedBlackWhiteSubtitle){
+            hasAnimatedBlackWhiteSubtitle = true;
+            anime({
+                targets: "#black_white_subtitle",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200,
+            })
+        }
+
+        if(blackWhiteDatePos.top < window.innerHeight && blackWhiteDatePos.bottom > 0 && !hasAnimatedBlackWhiteDate){
+            hasAnimatedBlackWhiteDate = true;
+            anime({
+                targets: "#black_white_date",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1400,
+            })
+        }
+
+        if(blackWhiteDescPos.top < window.innerHeight && blackWhiteDescPos.bottom > 0 && !hasAnimatedBlackWhiteDesc){
+            hasAnimatedBlackWhiteDesc = true;
+            anime({
+                targets: "#black_white_description",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1600,
+            })
+        }
+
+        if(gothicImagOnePos.top < window.innerHeight && gothicImagOnePos.bottom > 0 && !hasAnimatedGothicImageOne){
+            hasAnimatedGothicImageOne = true;
+            anime({
+                targets: "#gothic_image_one",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+                rotate: "360deg",
+            })
+        }
+
+        if(gothicImagTwoPos.top < window.innerHeight && gothicImagTwoPos.bottom > 0 && !hasAnimatedGothicImageTwo){
+            hasAnimatedGothicImageTwo = true;
+            anime({
+                targets: "#gothic_image_two",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+                rotate: "360deg",
+            })
+        }
+
+        if(gothicTitlePos.top < window.innerHeight && gothicTitlePos.bottom > 0 && !hasAnimatedGothicTitle){
+            hasAnimatedGothicTitle = true;
+            anime({
+                targets: "#gothic_title",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1000,
+            })
+        }
+
+        if(gothicSubtitlePos.top < window.innerHeight && gothicSubtitlePos.bottom > 0 && !hasAnimatedGothicSubtitle){
+            hasAnimatedGothicSubtitle = true;
+            anime({
+                targets: "#gothic_subtitle",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200,
+            })
+        }
+
+        if(gothicDatePos.top < window.innerHeight && gothicDatePos.bottom > 0 && !hasAnimatedGothicDate){
+            hasAnimatedGothicDate = true;
+            anime({
+                targets: "#gothic_date",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200,
+            })
+        }
+
+        if(gothicDescPos.top < window.innerHeight && gothicDescPos.bottom > 0 && !hasAnimatedGothicDesc){
+            hasAnimatedGothicDesc = true;
+            anime({
+                targets: "#gothic_description",
+                opacity: [0, 1],
+                duration: 2000,
+                easing: "easeOutExpo",
+                delay: 1200,
+            })
+        }
+    })
+
+</script>
 
 <style>
 
@@ -183,7 +613,7 @@ import futuristic from "../../public/futuristic.webp"
 .exhibitions_card_blackwhite{
     margin: 4rem 0 6rem;
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 45% 55%;
 }
 
 .exhibitions_card_blackwhite_content_container{
@@ -197,7 +627,7 @@ import futuristic from "../../public/futuristic.webp"
 }
 
 .exhibitions_card_blackwhite_img_one{
-    width: 500px;
+    width: 550px;
     height: auto;
 }
 
@@ -213,8 +643,9 @@ import futuristic from "../../public/futuristic.webp"
 }
 
 .exhibitions_gothic_card_img{
-    width: 300px;
+    width: 280px;
     height: auto;
+    gap: 4px;
 }
 
 .exhibitions_gothic_card_content_container{
