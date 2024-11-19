@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+
+import blackwhite from "../../public/black_white_model.webp"
+import indian_runway from "../../public/indian_runway.webp"
+import gothicdress from "../../public/goth_dress.webp"
+import summer_runway from "../../public/summer_runway.webp"
+---
+
+<div class="main_container">
+    <div class="main_container_header">
+        <h2 class="container_header_title">Discover our Exhibitions</h2>
+        <ul class="container_description_list">
+            <li class="container_description_item">Step into a world where elegance meets intrigue, where every thread whispers a story, and every silhouette commands attention. This exhibition section is a curated symphony of artistry and allure, inviting you to explore the sensuality and sophistication that define fashion at its most provocative. Here, beauty is not just seen—it is felt, experienced, and remembered.</li>
+            <li class="container_description_item">Our exhibitions bring to life the exquisite duality of fashion: bold yet refined, daring yet timeless. From the opulence of Indian-inspired designs to the seductive contrast of gothic palettes, every collection is a testament to the power of imagination and creativity. This is a space where boundaries are blurred, and individuality takes center stage, creating moments that are as captivating as they are unforgettable.</li>
+            <li class="container_description_item">This is more than a showcase; it is an invitation to indulge in the beauty of form, fabric, and feeling. Allow yourself to be swept away by the monochrome mystique, the carefree charm of summer glam, or the rich textures of retro bohemian chic. Each exhibit is a sensory experience, a celebration of fashion's ability to captivate and transform. Welcome to a space where every glance lingers, and every moment is a masterpiece.</li>
+        </ul>
+        <Image src={summer_runway} alt="exhibition_section_image" class="main_container_image"/>
+    </div>
+    <div>
+        <div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+
+.main_container{
+    display: grid;
+    grid-template-columns: auto;
+    margin: 6rem 0 0;
+    background-color: #fff;
+    color: #010101;
+}
+
+.main_container_header{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.container_header_title{
+    text-align: center;
+    font-family: "Karla";
+    text-transform: uppercase;
+    font-size: 6rem;
+    margin: 2rem 0 2rem
+}
+
+
+.container_description_list{
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    list-style: none;
+    gap: 0;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 0
+}
+
+.container_description_item{
+    font-size: 0.85rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    color: #7c7c7c ;
+}
+
+.main_container_image{
+    width: 300px;
+    height: auto;
+    margin: 4rem auto;
+}
+
+</style>
