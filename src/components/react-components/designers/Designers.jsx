@@ -1,5 +1,3 @@
-import { Image } from "astro:assets";
-
 import styled from "./Designers.module.css"
 
 const Designers = () => {
