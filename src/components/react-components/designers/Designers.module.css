@@ -1,0 +1,106 @@
+
+
+.main_container {
+   display: grid;
+   grid-template-columns: auto;
+   padding: 1rem;
+  }
+  
+  .container_header {
+    display: grid;
+    grid-template-columns: auto;
+  }
+  
+  .header_title {
+    text-align: center;
+    font-family: "Karla", sans-serif;
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin: 2rem 0 2rem
+  }
+
+  .container_description_list{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    list-style: none;
+    gap: 1%;
+    justify-content: space-between;
+    margin: 2rem;
+  }
+  
+  .header_description_one, .header_description_two {
+    font-size: 0.85rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    color: #7c7c7c;
+  }
+  
+  .cards_container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1%;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 4rem 0;
+  }
+  
+  .designer_card {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: flex-start;
+    height: fit-content;
+  }
+  
+  .designer_card_image_container {
+   width: fit-content;
+  }
+  
+  .designer_card_image {
+    width: 100%;
+    height: 400px;
+  }
+  
+  .designer_card_body {
+   padding: 1rem;
+  }
+  
+  .card_body_title {
+    font-family: 'Karla', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: #010101;
+    font-weight: 800;
+  }
+  
+  .card_body_quote {
+    font-size: 0.85rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    color: #010101;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .card_body_quote::after, .card_body_quote::before{
+    content: '"';
+  }
+  
+  .card_body_bio {
+    font-size: 0.85rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    color: #7c7c7c;
+    font-weight: 400;
+    margin: 2rem 0;
+  }
+  
+  .card_body_link {
+    font-size: 1rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    color: #010101;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
