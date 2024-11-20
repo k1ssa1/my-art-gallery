@@ -1,0 +1,163 @@
+---
+import { Image } from "astro:assets";
+
+import heels from "../../public/heels_collection.webp";
+import bohemain_dress from "../../public/bohemain_dress.webp";
+import bold_models from "../../public/bold_models.webp";
+import magazine_heels from "../../public/heels.webp";
+---
+
+<div class="main">
+  <div class="slider">
+    <section class="slide_one">
+      <Image
+        src={magazine_heels}
+        alt="heels and fashion magazine"
+        class="slide_image"
+      />
+      <div class="slide_body">
+        <h3>Our Story</h3>
+        <p class="subtitle">Fashion X Art</p>
+        <p class="desc">
+            Founded with a passion for design, we bridge the gap between art and couture, creating timeless exhibitions that inspire and captivate. Every exhibition is a journey into the world of fashion as an evolving art form, where creativity knows no bounds. Our commitment to excellence ensures that each showcase is not just an event, but an unforgettable experience.
+        </p>
+      </div>
+    </section>
+    <section class="slide_two">
+      <Image src={bohemain_dress} alt="two models" class="slide_image" />
+      <div class="slide_body">
+        <h3>Our Vision</h3>
+        <p class="subtitle">Redefining Boundaries</p>
+        <p class="desc">
+            Our vision is to redefine fashion as an art form, celebrating creativity, diversity, and sustainability through curated experiences. We are not just a gallery, but a movement that challenges norms, pushes boundaries, and fosters conversations about fashion’s role in society. Our exhibitions blend culture, style, and innovation, each telling a unique story that inspires change.
+        </p>
+      </div>
+    </section>
+    <section class="slide_three">
+      <Image src={bold_models} alt="two models" class="slide_image" />
+      <div class="slide_body">
+        <h3>Why We Stand Out</h3>
+        <p class="subtitle">A Unique Experience</p>
+        <p class="desc">
+            What sets us apart is our commitment to authenticity, storytelling, and creating exhibitions that resonate beyond the ordinary. Our inspiration stems from the intersection of tradition and innovation, where culture, craftsmanship, and creativity converge. Each exhibit is a tribute to the visionaries who have shaped the world of fashion, and a celebration of those who will continue to redefine it.
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+const scrollDiv = document.querySelector('.slider') as HTMLElement;
+
+let isHorizontalScrollActive = true;
+
+scrollDiv.addEventListener('wheel', (e) => {
+  // If we're in horizontal scroll mode
+  if (isHorizontalScrollActive) {
+    // Prevent the default vertical scroll behavior
+    e.preventDefault();
+    
+    // Scroll horizontally based on the deltaY
+    scrollDiv.scrollLeft += e.deltaY;
+  }
+});
+
+
+</script>
+
+<style>
+  .main {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; 
+  }
+
+
+  section {
+    display: flex;
+    flex-direction: row;
+    min-width: 82vw;
+    height: 100vh;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+
+  .slide_image {
+    width: 425px;
+    height: auto;
+    margin: 1rem;
+  }
+
+  .slide_body{
+    padding: 0 2rem;
+  }
+
+  section h3 {
+    font-family: "Karla", sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 1rem 0 0;
+    font-weight: 400;
+  }
+
+  section .subtitle {
+    font-family: "Karla", sans-serif;
+    font-size: 6rem;
+    margin: 1rem 0 0;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  section .desc {
+    font-size: 0.85rem;
+    font-family: "Karla", sans-serif;
+    line-height: 1.4;
+    width: 80%;
+    margin: 2rem 0;
+  }
+
+  section:nth-child(1){
+    background-color: #010101;
+  }
+
+  section:nth-child(1) .subtitle, section:nth-child(1) h3{
+    color: #fff;
+  }
+
+  section:nth-child(1) .desc{
+    color: #7c7c7c;
+  }
+
+  section:nth-child(2){
+    background-color: #db1414;
+  }
+
+  section:nth-child(2) .subtitle, section:nth-child(2) h3{
+    color: #010101;
+  }
+
+  section:nth-child(2) .desc{
+    color: #000000;
+  }
+
+  section:nth-child(3){
+    background-color: #e9e6e6;
+  }
+
+  section:nth-child(3) h3{
+    color: #010101;
+  }
+
+  section:nth-child(3) .subtitle{
+    color: #0101010
+  }
+
+  section:nth-child(3) .desc{
+    color: #7c7c7c;
+  }
+</style>
