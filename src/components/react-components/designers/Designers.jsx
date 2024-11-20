@@ -102,7 +102,7 @@ const Designers = () => {
 
 
     return ( 
-        <div className={styled.main_container}>
+        <div className={styled.main_container} id="designer_start">
             <div className={styled.container_header}>
                 <h2 className={styled.header_title} id="main_title">Discover the Visionaries Behind the Art</h2>
                 <ul className={styled.container_description_list}>
