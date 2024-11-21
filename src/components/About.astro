@@ -47,18 +47,52 @@ import magazine_heels from "../../public/heels.webp";
 </div>
 
 <script>
+const mainDiv = document.querySelector('.main') as HTMLElement;
 const scrollDiv = document.querySelector('.slider') as HTMLElement;
+let isHorizontalScrollActive = false;
 
-let isHorizontalScrollActive = true;
+// Detect when mouse enters the slider, activating horizontal scroll
+mainDiv.addEventListener('mouseenter', () => {
+  isHorizontalScrollActive = true;
+});
 
-scrollDiv.addEventListener('wheel', (e) => {
-  // If we're in horizontal scroll mode
+// Detect when mouse leaves the slider, deactivating horizontal scroll
+mainDiv.addEventListener('mouseleave', () => {
+  isHorizontalScrollActive = false;
+});
+
+// Listen for wheel events
+document.addEventListener('wheel', (e) => {
   if (isHorizontalScrollActive) {
-    // Prevent the default vertical scroll behavior
-    e.preventDefault();
-    
-    // Scroll horizontally based on the deltaY
-    scrollDiv.scrollLeft += e.deltaY;
+    const scrollAmount = e.deltaY;
+
+    // Calculate how much we want to scroll
+    const maxScrollLeft = scrollDiv.scrollWidth - scrollDiv.clientWidth;
+    const newScrollLeft = scrollDiv.scrollLeft + scrollAmount;
+
+    // Prevent scrolling beyond the left or right bounds
+    if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+      scrollDiv.scrollLeft = newScrollLeft;
+    } else {
+      // Prevent scrolling when at the left edge of the slider
+      if (newScrollLeft < 0) {
+        scrollDiv.scrollLeft = 0;
+      } else if (newScrollLeft > maxScrollLeft) {
+        scrollDiv.scrollLeft = maxScrollLeft;
+      }
+    }
+
+    // Prevent vertical scroll when at the start of the slider and trying to scroll up
+    if (scrollDiv.scrollLeft === 0 && e.deltaY < 0) {
+      e.preventDefault(); // This stops the vertical scroll when you're at the start
+    }
+
+    // Prevent vertical scroll when at the end of the slider and trying to scroll down
+    if (scrollDiv.scrollLeft === maxScrollLeft && e.deltaY > 0) {
+      e.preventDefault(); // This stops the vertical scroll when you're at the end
+    }
+
+    e.preventDefault(); // Prevent the default scroll behavior when the horizontal scroll is active
   }
 });
 
@@ -73,8 +107,7 @@ scrollDiv.addEventListener('wheel', (e) => {
 
   .slider {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory; 
+    overflow-x: hidden
   }
 
 
