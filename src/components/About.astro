@@ -7,109 +7,109 @@ import bold_models from "../../public/bold_models.webp";
 import magazine_heels from "../../public/heels.webp";
 ---
 
-<div class="main">
-  <div class="slider">
-    <section class="slide_one">
-      <Image
-        src={magazine_heels}
-        alt="heels and fashion magazine"
-        class="slide_image"
-      />
-      <div class="slide_body">
-        <h3>Our Story</h3>
-        <p class="subtitle">Fashion X Art</p>
-        <p class="desc">
-            Founded with a passion for design, we bridge the gap between art and couture, creating timeless exhibitions that inspire and captivate. Every exhibition is a journey into the world of fashion as an evolving art form, where creativity knows no bounds. Our commitment to excellence ensures that each showcase is not just an event, but an unforgettable experience.
-        </p>
-      </div>
-    </section>
-    <section class="slide_two">
-      <Image src={bohemain_dress} alt="two models" class="slide_image" />
-      <div class="slide_body">
-        <h3>Our Vision</h3>
-        <p class="subtitle">Redefining Boundaries</p>
-        <p class="desc">
-            Our vision is to redefine fashion as an art form, celebrating creativity, diversity, and sustainability through curated experiences. We are not just a gallery, but a movement that challenges norms, pushes boundaries, and fosters conversations about fashion’s role in society. Our exhibitions blend culture, style, and innovation, each telling a unique story that inspires change.
-        </p>
-      </div>
-    </section>
-    <section class="slide_three">
-      <Image src={bold_models} alt="two models" class="slide_image" />
-      <div class="slide_body">
-        <h3>Why We Stand Out</h3>
-        <p class="subtitle">A Unique Experience</p>
-        <p class="desc">
-            What sets us apart is our commitment to authenticity, storytelling, and creating exhibitions that resonate beyond the ordinary. Our inspiration stems from the intersection of tradition and innovation, where culture, craftsmanship, and creativity converge. Each exhibit is a tribute to the visionaries who have shaped the world of fashion, and a celebration of those who will continue to redefine it.
-        </p>
-      </div>
-    </section>
-  </div>
+<div class="slider">
+  <section class="slide_one">
+    <Image
+      src={magazine_heels}
+      alt="heels and fashion magazine"
+      class="slide_image"
+    />
+    <div class="slide_body">
+      <h3>Our Story</h3>
+      <p class="subtitle">Fashion X Art</p>
+      <p class="desc">
+        Founded with a passion for design, we bridge the gap between art and
+        couture, creating timeless exhibitions that inspire and captivate. Every
+        exhibition is a journey into the world of fashion as an evolving art
+        form, where creativity knows no bounds. Our commitment to excellence
+        ensures that each showcase is not just an event, but an unforgettable
+        experience.
+      </p>
+    </div>
+  </section>
+  <section class="slide_two">
+    <Image src={bohemain_dress} alt="two models" class="slide_image" />
+    <div class="slide_body">
+      <h3>Our Vision</h3>
+      <p class="subtitle">Redefining Boundaries</p>
+      <p class="desc">
+        Our vision is to redefine fashion as an art form, celebrating
+        creativity, diversity, and sustainability through curated experiences.
+        We are not just a gallery, but a movement that challenges norms, pushes
+        boundaries, and fosters conversations about fashion’s role in society.
+        Our exhibitions blend culture, style, and innovation, each telling a
+        unique story that inspires change.
+      </p>
+    </div>
+  </section>
+  <section class="slide_three">
+    <Image src={bold_models} alt="two models" class="slide_image" />
+    <div class="slide_body">
+      <h3>Why We Stand Out</h3>
+      <p class="subtitle">A Unique Experience</p>
+      <p class="desc">
+        What sets us apart is our commitment to authenticity, storytelling, and
+        creating exhibitions that resonate beyond the ordinary. Our inspiration
+        stems from the intersection of tradition and innovation, where culture,
+        craftsmanship, and creativity converge. Each exhibit is a tribute to the
+        visionaries who have shaped the world of fashion, and a celebration of
+        those who will continue to redefine it.
+      </p>
+    </div>
+  </section>
 </div>
 
 <script>
-const mainDiv = document.querySelector('.main') as HTMLElement;
-const scrollDiv = document.querySelector('.slider') as HTMLElement;
-let isHorizontalScrollActive = false;
+  const scrollDiv = document.querySelector(".slider") as HTMLElement;
 
-// Detect when mouse enters the slider, activating horizontal scroll
-mainDiv.addEventListener('mouseenter', () => {
-  isHorizontalScrollActive = true;
-});
-
-// Detect when mouse leaves the slider, deactivating horizontal scroll
-mainDiv.addEventListener('mouseleave', () => {
-  isHorizontalScrollActive = false;
-});
-
-// Listen for wheel events
-document.addEventListener('wheel', (e) => {
-  if (isHorizontalScrollActive) {
+  // Listen for wheel events
+  document.addEventListener("wheel", (e) => {
+    e.preventDefault();
     const scrollAmount = e.deltaY;
-
-    // Calculate how much we want to scroll
+    const scrollDivPos = scrollDiv.getBoundingClientRect();
     const maxScrollLeft = scrollDiv.scrollWidth - scrollDiv.clientWidth;
     const newScrollLeft = scrollDiv.scrollLeft + scrollAmount;
 
-    // Prevent scrolling beyond the left or right bounds
-    if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
-      scrollDiv.scrollLeft = newScrollLeft;
-    } else {
-      // Prevent scrolling when at the left edge of the slider
-      if (newScrollLeft < 0) {
-        scrollDiv.scrollLeft = 0;
-      } else if (newScrollLeft > maxScrollLeft) {
-        scrollDiv.scrollLeft = maxScrollLeft;
+    if (scrollDivPos.bottom <= window.innerHeight) {
+      scrollDiv.classList.add("sticky");
+      // Prevent scrolling beyond the left or right bounds
+      if (newScrollLeft >= 0 && newScrollLeft <= maxScrollLeft) {
+        scrollDiv.scrollLeft = newScrollLeft;
+      } else {
+        // Prevent scrolling when at the left edge of the slider
+        if (newScrollLeft <= 0) {
+          scrollDiv.scrollLeft = 0;
+          const previousElement = scrollDiv.previousElementSibling as HTMLElement;
+          if(!previousElement) return;
+          if(previousElement){
+            scrollDiv.classList.remove("sticky");
+            previousElement.scrollIntoView({ behavior: "smooth", block: "end" });
+          }
+        } else if (newScrollLeft >= maxScrollLeft) {
+          scrollDiv.scrollLeft = maxScrollLeft;
+          const nextElement = scrollDiv.nextElementSibling as HTMLElement;
+          if (!nextElement) return;
+          if(nextElement){
+            scrollDiv.classList.remove("sticky");
+            nextElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
       }
     }
-
-    // Prevent vertical scroll when at the start of the slider and trying to scroll up
-    if (scrollDiv.scrollLeft === 0 && e.deltaY < 0) {
-      e.preventDefault(); // This stops the vertical scroll when you're at the start
-    }
-
-    // Prevent vertical scroll when at the end of the slider and trying to scroll down
-    if (scrollDiv.scrollLeft === maxScrollLeft && e.deltaY > 0) {
-      e.preventDefault(); // This stops the vertical scroll when you're at the end
-    }
-
-    e.preventDefault(); // Prevent the default scroll behavior when the horizontal scroll is active
-  }
-});
-
-
+  });
 </script>
 
 <style>
-  .main {
-    display: grid;
-    grid-template-columns: auto;
-  }
-
   .slider {
     display: flex;
-    overflow-x: hidden
+    overflow-x: hidden;
   }
 
+  .sticky {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
 
   section {
     display: flex;
@@ -126,7 +126,7 @@ document.addEventListener('wheel', (e) => {
     margin: 1rem;
   }
 
-  .slide_body{
+  .slide_body {
     padding: 0 2rem;
   }
 
@@ -154,43 +154,45 @@ document.addEventListener('wheel', (e) => {
     margin: 2rem 0;
   }
 
-  section:nth-child(1){
+  section:nth-child(1) {
     background-color: #010101;
   }
 
-  section:nth-child(1) .subtitle, section:nth-child(1) h3{
+  section:nth-child(1) .subtitle,
+  section:nth-child(1) h3 {
     color: #fff;
   }
 
-  section:nth-child(1) .desc{
+  section:nth-child(1) .desc {
     color: #7c7c7c;
   }
 
-  section:nth-child(2){
+  section:nth-child(2) {
     background-color: #db1414;
   }
 
-  section:nth-child(2) .subtitle, section:nth-child(2) h3{
+  section:nth-child(2) .subtitle,
+  section:nth-child(2) h3 {
     color: #010101;
   }
 
-  section:nth-child(2) .desc{
+  section:nth-child(2) .desc {
     color: #000000;
   }
 
-  section:nth-child(3){
+  section:nth-child(3) {
     background-color: #e9e6e6;
   }
 
-  section:nth-child(3) h3{
+  section:nth-child(3) h3 {
     color: #010101;
   }
 
-  section:nth-child(3) .subtitle{
-    color: #0101010
+  section:nth-child(3) .subtitle {
+    color: #0101010;
   }
 
-  section:nth-child(3) .desc{
+  section:nth-child(3) .desc {
     color: #7c7c7c;
   }
 </style>
